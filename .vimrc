@@ -35,8 +35,8 @@ silent! nmap <F3> :NERDTreeToggle<CR>
 
 " Solarized colorscheme
 syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 " PowerLine
 let g:Powerline_symbols = 'fancy'
