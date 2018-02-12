@@ -4,8 +4,14 @@ sudo apt-get install vim
 
 # Git config
 sudo apt-get install git
-git config --global user.name "Connor"
-git config --global user.email cqm@andrew.cmu.edu
+echo "Type in default git username, followed by [ENTER]:"
+read GIT_USER
+
+echo "Type in default git email, followed by [ENTER]:"
+read GIT_EMAIL
+
+git config --global user.name $GIT_USER
+git config --global user.email $GIT_EMAIL
 git config --global core.editor vim
 
 # Install sublime 3
