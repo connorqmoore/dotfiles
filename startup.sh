@@ -37,14 +37,11 @@ rm -rf dotfiles
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-git clone https://github.com/ghuntley/terminator-solarized.git
 cd terminator-solarized
 mkdir -p ~/.config/terminator/
 touch ~/.config/terminator/config
 # if you want to replace current config:
 cp config ~/.config/terminator
-# if you want to append current config:
-cat config >> ~/.config/terminator/config
 
 cd ..
 rm -rf terminator-solarized
@@ -55,12 +52,14 @@ rm -rf terminator-solarized
 
 # Add vimperator
 
-# Setup Ruby
-apt-get install curl
-command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
-\curl -sSL https://get.rvm.io | bash -s stable
-rvm install 2.2.0
-apt-get install nodejs
-rvm use 2.2.0
-gem install rails -v=4.0.13
+# Add powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts/
+./install.sh
+cd ..
 
+# ZSH
+sudo apt install zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Change terminator options to have font
